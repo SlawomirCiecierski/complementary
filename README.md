@@ -9,3 +9,5 @@ Uwaga 2! W procesie przetwarzania ciągu znaków należy zignorować wszelkie po
 Uwaga 3! Czas na wykonanie zadania to 72 godziny liczony od chwili jego otrzymania.
 Cel zadania
 Zadanie ma na celu weryfikację: • umiejętności czytania ze zrozumieniem dokumentacji technicznej i wyszukiwania wiedzy domenowej • umiejętności abstrakcyjnego, analitycznego i algorytmicznego myślenia • umiejętności korzystania z podstawowych konstrukcji wybranego języka programowania
+
+##Kody źródłowe rozwiązań znajdują się w folderach answ1 i answ2

@@ -1,12 +1,13 @@
-package pl.bydgoszcz.ciecierski;
+package pl.bydgoszcz.ciecierski.answ2;
 
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
-import static pl.bydgoszcz.ciecierski.Main.INPUT_FILE;
-import static pl.bydgoszcz.ciecierski.Main.OUTPUT_FILE;
 
-public class PreparingText {
+import static pl.bydgoszcz.ciecierski.answ2.Main.INPUT_FILE;
+import static pl.bydgoszcz.ciecierski.answ2.Main.OUTPUT_FILE;
+
+public class PreparingData {
     FileReader fileInputRead;
     FileWriter fileOutputWrite;
 
@@ -17,7 +18,7 @@ public class PreparingText {
 
         try {
             fileInputRead = new FileReader(INPUT_FILE);
-            System.out.println("Otwieranie pliku z danymi "+INPUT_FILE);
+            System.out.println("Otwieranie pliku z danymi " + INPUT_FILE);
         } catch (FileNotFoundException e) {
             System.out.println("Nie można otworzyć pliku");
             return null;
@@ -27,29 +28,18 @@ public class PreparingText {
 
             do {
                 i = fileInputRead.read();
-                if (i != -1 && i > 47 && i < 91) { // znaki od '0' do 'Z'
+                if (i > 47 && i < 91) { // znaki od '0' do 'Z'
                     char znak;
                     znak = (char) i;
                     switch (znak) {
                         case 'A':
-                            in.add("" + znak);
-//                            myString +=  znak;
-                            break;
                         case 'C':
-                            in.add("" + znak);
-//                            myString +=  znak;
-                            break;
                         case 'G':
-                            in.add("" + znak);
-//                            myString +=  znak;
-                            break;
                         case 'T':
                             in.add("" + znak);
-//                            myString +=  znak;
                             break;
                         default:
                             in.add("" + (char) (++i));
-//                            myString+=myString+ (char)(++i);
                             break;
                     }
                 }
@@ -77,9 +67,11 @@ public class PreparingText {
             System.out.println("Błąd we/wy");
         }
 
+        System.out.println("Obróbka danych..");
+        System.out.println("Zapis danych do pliku " + OUTPUT_FILE);
+
         try {
-            System.out.println("Obróbka danych..");
-            System.out.println("Zapis danych do pliku "+OUTPUT_FILE);
+
             for (int a = 0; a < nitrogenAlkaliOfNucleotides.size(); a++) {
 
                 switch (nitrogenAlkaliOfNucleotides.get(a)) {
@@ -96,10 +88,8 @@ public class PreparingText {
                         nitrogenAlkaliOfNucleotides.set(a, "A");
                         break;
                 }
-//                System.out.print(nitrogenAlkaliOfNucleotides.get(a));
 
                 fileOutputWrite.write(nitrogenAlkaliOfNucleotides.get(a));
-
             }
         } catch (IOException e) {
             System.out.println("Bład wejścia/wyjścia");
@@ -109,6 +99,7 @@ public class PreparingText {
             fileOutputWrite.close();
         } catch (IOException e) {
             System.out.println("Błąd zamykania pliku docelowego");
+
         }
 
     }

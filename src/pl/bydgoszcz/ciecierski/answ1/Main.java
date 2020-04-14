@@ -1,14 +1,14 @@
-package pl.bydgoszcz.ciecierski;
+package pl.bydgoszcz.ciecierski.answ1;
 
 
 import java.util.List;
 
 public class Main {
 
-    private List<String> nitrogenBasesOfNucleotides;
+
 
     public static final String INPUT_FILE = "zadanie-weryfikacyjne.v3.0.dane.txt";
-    public static final String OUTPUT_FILE = "result-of-complementary.txt";
+    public static final String OUTPUT_FILE = "result-of-complementary-answ1.txt";
 
     public static void main(String[] args) {
 
